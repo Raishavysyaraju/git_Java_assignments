@@ -11,6 +11,7 @@ public class Maths {
 	{
 		int Result = a/b;
 		System.out.println("Division of A & B Is:" + Result);
+		
 	}
 	
 	public void square(int a)
