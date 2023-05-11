@@ -38,13 +38,14 @@ public class EmployeeFrame extends Frame {
 	private TextArea EmployeeAddressTA;
 	private Label EmployeeSalaryLbl;
 	private TextField EmployeeSalaryTF;
+	public TextField emp_contact;
 	
 	//Frame creation with fields, set bounds and color
 	public EmployeeFrame(boolean visible,String Title, int X, int Y, int Width, int Height){
 		this.setVisible(visible);
 		this.setTitle(Title);
 		this.setBounds(X, Y, Width, Height);
-		this.setBackground(Color.blue);
+		this.setBackground(Color.LIGHT_GRAY);
 		this.setLayout(null);
 		this.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -145,42 +146,221 @@ public class EmployeeFrame extends Frame {
 		Button Savebtn = new Button("Save");
 		Savebtn.setBounds(40, 370, 40, 20);
 		add(Savebtn);
-		Savebtn.addActionListener(new EmployeeHandler());
+		Savebtn.addActionListener(new EmployeeHandler(this));
 		
 		Button Searchbtn = new Button("Search");
 		Searchbtn.setBounds(90, 370, 50, 20);
 		add(Searchbtn);
-		Searchbtn.addActionListener(new EmployeeHandler());
+		Searchbtn.addActionListener(new EmployeeHandler(this));
 		
 		Button UpdateBtn = new Button("Update");
 		UpdateBtn.setBounds(150, 370, 50, 20);
 		add(UpdateBtn);
-		UpdateBtn.addActionListener(new EmployeeHandler());
+		UpdateBtn.addActionListener(new EmployeeHandler(this));
 		
 		Button DeletBtn = new Button("Delete");
 		DeletBtn.setBounds(210, 370, 50, 20);
 		add(DeletBtn);
-		DeletBtn.addActionListener(new EmployeeHandler());
+		DeletBtn.addActionListener(new EmployeeHandler(this));
 		
 		Button Firstbtn = new Button("First");
 		Firstbtn.setBounds(40, 400, 40, 20);
 		add(Firstbtn);
-		Firstbtn.addActionListener(new EmployeeHandler());
+		Firstbtn.addActionListener(new EmployeeHandler(this));
 		
 		Button Nextbtn = new Button("Next");
 		Nextbtn.setBounds(90, 400, 50, 20);
 		add(Nextbtn);
-		Nextbtn.addActionListener(new EmployeeHandler());
+		Nextbtn.addActionListener(new EmployeeHandler(this));
 		
 		Button PrevBtn = new Button("Prev");
 		PrevBtn.setBounds(150, 400, 50, 20);
 		add(PrevBtn);
-		PrevBtn.addActionListener(new EmployeeHandler());
+		PrevBtn.addActionListener(new EmployeeHandler(this));
 		
 		Button LastBtn = new Button("Last");
 		LastBtn.setBounds(210, 400, 50, 20);
 		add(LastBtn);
-		LastBtn.addActionListener(new EmployeeHandler());
+		LastBtn.addActionListener(new EmployeeHandler(this));
 	}//Employee() close
+	
+	//Getters & Setters to access private variables out side the class
 
+	public Label getEmployeeIdLbl() {
+		return EmployeeIdLbl;
+	}
+
+	public void setEmployeeIdLbl(Label employeeIdLbl) {
+		EmployeeIdLbl = employeeIdLbl;
+	}
+
+	public TextField getEmployeeIdTF() {
+		return EmployeeIdTF;
+	}
+
+	public void setEmployeeIdTF(TextField employeeIdTF) {
+		EmployeeIdTF = employeeIdTF;
+	}
+
+	public Label getEmployeeNameLbl() {
+		return EmployeeNameLbl;
+	}
+
+	public void setEmployeeNameLbl(Label employeeNameLbl) {
+		EmployeeNameLbl = employeeNameLbl;
+	}
+
+	public TextField getEmployeeNameTF() {
+		return EmployeeNameTF;
+	}
+
+	public void setEmployeeNameTF(TextField employeeNameTF) {
+		EmployeeNameTF = employeeNameTF;
+	}
+
+	public Label getEmployeeGenderLbl() {
+		return EmployeeGenderLbl;
+	}
+
+	public void setEmployeeGenderLbl(Label employeeGenderLbl) {
+		EmployeeGenderLbl = employeeGenderLbl;
+	}
+
+	public Checkbox getMaleOption() {
+		return MaleOption;
+	}
+
+	public void setMaleOption(Checkbox maleOption) {
+		MaleOption = maleOption;
+	}
+
+	public Checkbox getFemaleOption() {
+		return FemaleOption;
+	}
+
+	public void setFemaleOption(Checkbox femaleOption) {
+		FemaleOption = femaleOption;
+	}
+
+	public Checkbox getOtherOption() {
+		return OtherOption;
+	}
+
+	public void setOtherOption(Checkbox otherOption) {
+		OtherOption = otherOption;
+	}
+
+	public CheckboxGroup getGenderGroup() {
+		return GenderGroup;
+	}
+
+	public void setGenderGroup(CheckboxGroup genderGroup) {
+		GenderGroup = genderGroup;
+	}
+
+	public Label getEmployeePerksLbl() {
+		return EmployeePerksLbl;
+	}
+
+	public void setEmployeePerksLbl(Label employeePerksLbl) {
+		EmployeePerksLbl = employeePerksLbl;
+	}
+
+	public Checkbox getPfOption() {
+		return pfOption;
+	}
+
+	public void setPfOption(Checkbox pfOption) {
+		this.pfOption = pfOption;
+	}
+
+	public Checkbox getGraduityOption() {
+		return graduityOption;
+	}
+
+	public void setGraduityOption(Checkbox graduityOption) {
+		this.graduityOption = graduityOption;
+	}
+
+	public Checkbox getMealCardOption() {
+		return mealCardOption;
+	}
+
+	public void setMealCardOption(Checkbox mealCardOption) {
+		this.mealCardOption = mealCardOption;
+	}
+
+	public Checkbox getNpsOption() {
+		return npsOption;
+	}
+
+	public void setNpsOption(Checkbox npsOption) {
+		this.npsOption = npsOption;
+	}
+
+	public Checkbox getMediClaimOption() {
+		return mediClaimOption;
+	}
+
+	public void setMediClaimOption(Checkbox mediClaimOption) {
+		this.mediClaimOption = mediClaimOption;
+	}
+
+	public Label getEmpOfcLocLbl() {
+		return EmpOfcLocLbl;
+	}
+
+	public void setEmpOfcLocLbl(Label empOfcLocLbl) {
+		EmpOfcLocLbl = empOfcLocLbl;
+	}
+
+	public Choice getLocationOption() {
+		return LocationOption;
+	}
+
+	public void setLocationOption(Choice locationOption) {
+		LocationOption = locationOption;
+	}
+
+	public Label getEmployeeAddressLbl() {
+		return EmployeeAddressLbl;
+	}
+
+	public void setEmployeeAddressLbl(Label employeeAddressLbl) {
+		EmployeeAddressLbl = employeeAddressLbl;
+	}
+
+	public TextArea getEmployeeAddressTA() {
+		return EmployeeAddressTA;
+	}
+
+	public void setEmployeeAddressTA(TextArea employeeAddressTA) {
+		EmployeeAddressTA = employeeAddressTA;
+	}
+
+	public Label getEmployeeSalaryLbl() {
+		return EmployeeSalaryLbl;
+	}
+
+	public void setEmployeeSalaryLbl(Label employeeSalaryLbl) {
+		EmployeeSalaryLbl = employeeSalaryLbl;
+	}
+
+	public TextField getEmployeeSalaryTF() {
+		return EmployeeSalaryTF;
+	}
+
+	public void setEmployeeSalaryTF(TextField employeeSalaryTF) {
+		EmployeeSalaryTF = employeeSalaryTF;
+	}
+
+	public TextField getEmp_contact() {
+		return emp_contact;
+	}
+
+	public void setEmp_contact(TextField emp_contact) {
+		this.emp_contact = emp_contact;
+	}
+
+	
 }//Class Close
