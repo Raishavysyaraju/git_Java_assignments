@@ -38,7 +38,7 @@ public class EmployeeFrame extends Frame {
 	private TextArea EmployeeAddressTA;
 	private Label EmployeeSalaryLbl;
 	private TextField EmployeeSalaryTF;
-	public TextField emp_contact;
+	//public TextField emp_contact;
 	
 	//Frame creation with fields, set bounds and color
 	public EmployeeFrame(boolean visible,String Title, int X, int Y, int Width, int Height){
@@ -127,7 +127,7 @@ public class EmployeeFrame extends Frame {
 		add(LocationOption);
 		
 		EmployeeAddressLbl = new Label("Employee Address:");
-		EmployeeAddressLbl.setBounds(370, 200, 100, 20);
+		EmployeeAddressLbl.setBounds(370, 200, 120, 20);
 		add(EmployeeAddressLbl);
 		
 		EmployeeAddressTA = new TextArea();
@@ -135,7 +135,7 @@ public class EmployeeFrame extends Frame {
 		add(EmployeeAddressTA);
 		
 		EmployeeSalaryLbl = new Label("Employee Salary:");
-		EmployeeSalaryLbl.setBounds(20, 320, 80, 20);
+		EmployeeSalaryLbl.setBounds(20, 320, 100, 20);
 		add(EmployeeSalaryLbl);
 		
 		EmployeeSalaryTF = new TextField();
@@ -354,13 +354,13 @@ public class EmployeeFrame extends Frame {
 		EmployeeSalaryTF = employeeSalaryTF;
 	}
 
-	public TextField getEmp_contact() {
+	/*public TextField getEmp_contact() {
 		return emp_contact;
 	}
 
 	public void setEmp_contact(TextField emp_contact) {
 		this.emp_contact = emp_contact;
-	}
+	}*/
 
 	
 }//Class Close

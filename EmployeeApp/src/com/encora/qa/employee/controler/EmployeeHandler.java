@@ -20,10 +20,10 @@ public class EmployeeHandler implements ActionListener {
 		dto.setEmployeeName(ef.getEmployeeNameTF().getText());
 		dto.setGender(ef.getGenderGroup().getSelectedCheckbox().getLabel());
 		dto.setPF(ef.getPfOption().getState());
-		dto.setPF(ef.getNpsOption().getState());
-		dto.setPF(ef.getMealCardOption().getState());
-		dto.setPF(ef.getMediClaimOption().getState());
-		dto.setPF(ef.getGraduityOption().getState());
+		dto.setNPS(ef.getNpsOption().getState());
+		dto.setMealCard(ef.getMealCardOption().getState());
+		dto.setMediclaim(ef.getMediClaimOption().getState());
+		dto.setGraduity(ef.getGraduityOption().getState());
 		dto.setOfcLocation(ef.getLocationOption().getSelectedItem());
 		dto.setAddress(ef.getEmployeeAddressTA().getText());
 		dto.setSalary( Integer.parseInt(ef.getEmployeeSalaryTF().getText()));
